@@ -1,0 +1,43 @@
+{
+    "extends": [
+        "eslint:all",
+        "plugin:node/recommended"
+    ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "commonjs": true,
+        "jest/globals": true
+    },
+    "plugins": [
+        "jest",
+        "node"
+    ],
+    "rules": {
+        "no-console": "off",
+        "one-var": "off",
+        "padded-blocks": "off",
+        "quotes": ["error", "single"],
+        "max-len": ["error", 120],
+        "strict": "off",
+        "space-before-function-paren": ["error", "never"],
+        "no-multiple-empty-lines": ["error", { "max": 1}],
+        "global-require": "off",
+        "object-curly-newline": ["error", "always"],
+        "quote-props": "off",
+        "sort-keys": "off",
+        "line-comment-position": "off",
+        "no-inline-comments": "off",
+        "no-underscore-dangle": "off",
+        "capitalized-comments": "off",
+        "func-names": "off",
+        "no-implicit-coercion": "off",
+        "class-methods-use-this": "off",
+        "wrap-regex": "off",
+        "max-params": ["error", { "max": 4}],
+        "no-magic-numbers": ["error", { "ignore": [0, 1] }]
+    }
+}
