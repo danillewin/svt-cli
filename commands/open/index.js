@@ -3,9 +3,9 @@ const childProcess = require('child_process');
 const open = function(name) {
     return new Promise((resolve) => {
         if (name) {
-            const buildComp = childProcess.spawn('npm', [
-                'open',
-                '-a yandex',
+            const buildComp = childProcess.spawn('open', [
+                '-a',
+                'yandex',
                 name
             ]);
 
