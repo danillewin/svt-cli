@@ -1,4 +1,6 @@
 const childProcess = require('child_process');
+const path = require('path');
+const componentsPath = path.resolve('components/desktop/new');
 
 const open = function(name) {
     return new Promise((resolve) => {
@@ -6,7 +8,7 @@ const open = function(name) {
             const buildComp = childProcess.spawn('open', [
                 '-a',
                 'yandex',
-                name
+                `${componentsPath}/${name}/rendered/component.html`
             ]);
 
             buildComp.stdout.on('data', (data) => {
