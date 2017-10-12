@@ -1,14 +1,21 @@
 const watchTree = require('chokidar').watch;
 const path = require('path');
 const build = require('./../build');
+const open = require('./../open');
 
 const start = (name) => {
     const componentsPath = path.resolve('components/desktop/new');
+    const stylesPath = path.resolve('styles/desktop/css-new');
 
     console.log('watching...');
 
+    open(name);
+
     watchTree(
-        componentsPath,
+        [
+            componentsPath,
+            stylesPath
+        ],
         {
             ignored: /rendered/
         }
