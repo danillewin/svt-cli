@@ -48,47 +48,29 @@ svt open <name>
 ```
 #### _Параметры_
 ```name``` - обязательный параметр, имя компонента, который хотим открыть в браузере.
+
 ## add
 Подготавливает и заполняет шаблонным кодом файлы для нового компонента.
-* создает в _components/desktop/new_ папку с именем компонента
-* создает в ней _.js_ файл с шаблоном описания класса
-```(js)
-const ViewComponent = require('./../../../view-component');
-const template = require('./<%= fsName %>.mustache');
 
-/**
- * <%= description %>
- */
-class <%= className %> extends ViewComponent {
-
-    /**
-     * @constructor
-     * @param {ViewComponent} parentComponent
-     * @param {Object} data
-     * @param {HTMLElement} elementToRender
-     * @param {HTMLElement} [nextElement]
-     */
-
-    constructor(parentComponent, data, elementToRender, nextElement) {
-        super(parentComponent, data, elementToRender, nextElement);
-
-        this._el = this.renderTemplate(template, data);
-        this._style = require('./style');
-
-        this.render();
-    }
-}
-
-module.exports = <%= className %>;
-
-```
-* папку _data_ и файл _full.js_, данные компонента
-
-
+#### _Формат_
 ```
 svt add
-Добавляет заготовку для нового компонента:
 ```
+
+#### _Описание работы_
+
+При вызове команды начнется диалог, в котором нужно будет задать:
+* имя компонента
+* описание компонента
+
+В итоге:
+
+* создает в _styles/desktop/css-new_ файл _${name}.css_ с шаблоном стилей компонента
+* создает в _components/desktop/new/${name}_ папку компонента
+* создает в ней _${name}.js_ файл с шаблоном описания класса
+* _${name}.mustache_ с темплейтом компонента
+* _style.js_ - описание CSS зависимостей
+
 ## start
 ```
 svt start <name>
