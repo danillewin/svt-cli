@@ -11,7 +11,7 @@ commander.version('0.1.0');
 
 commander.
     command('add').
-    description('adds scaffold of sovetnik componet').
+    description('add scaffold of sovetnik componet').
     action(addCommand);
 
 commander.
@@ -22,12 +22,12 @@ commander.
 
 commander.
     command('start <name>').
-    description('starts dev-server watching sovetnik component').
+    description('start dev-server watching sovetnik component').
     action(startCommand);
 
 commander.
-    command('open [name]').
-    description('opens component in browser').
+    command('open <name>').
+    description('open component in browser').
     action(openCommand);
 
 commander.parse(process.argv);
