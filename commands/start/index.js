@@ -7,25 +7,27 @@ const start = (name) => {
     const componentsPath = path.resolve('components/desktop/new');
     const stylesPath = path.resolve('styles/desktop/css-new');
 
-    console.log('watching...');
+    build(name).
+        then(() => open(name)).
+        then(() => {
+            console.log('Watching changes');
 
-    open(name);
+            watchTree(
+                [
+                    componentsPath,
+                    stylesPath
+                ],
+                {
+                    ignored: /rendered/
+                }
+            ).on('change', (file) => {
+                console.log(`change at ${file}`);
 
-    watchTree(
-        [
-            componentsPath,
-            stylesPath
-        ],
-        {
-            ignored: /rendered/
-        }
-    ).on('change', (file) => {
-        console.log(`change at ${file}`);
-
-        build(name).then(() => {
-            console.log('Reload browser here!');
+                build(name).then(() => {
+                    console.log('Reload browser here! Continue watching');
+                });
+            });
         });
-    });
 };
 
 module.exports = start;
