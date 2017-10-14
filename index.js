@@ -16,6 +16,7 @@ commander.
 
 commander.
     command('build [name]').
+    option('-o, --open', 'open component page after build').
     description('build all components or provided component').
     action(buildCommand);
 

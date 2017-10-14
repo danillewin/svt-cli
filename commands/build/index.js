@@ -1,6 +1,7 @@
 const childProcess = require('child_process');
+const openCommand = require('../open/index');
 
-const build = function(name) {
+const build = function(name, commander) {
     return new Promise((resolve) => {
         if (name) {
             const buildComp = childProcess.spawn('npm', [
@@ -18,6 +19,10 @@ const build = function(name) {
             });
 
             buildComp.on('close', () => {
+                if (commander && commander.open) {
+                    resolve(openCommand(name));
+                }
+
                 resolve();
             });
         } else {
