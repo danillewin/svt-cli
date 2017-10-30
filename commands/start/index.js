@@ -10,7 +10,7 @@ const start = (name) => {
     build(name).
         then(() => open(name)).
         then(() => {
-            console.log('Watching changes');
+            console.log('Watching changes!!!');
 
             watchTree(
                 [
@@ -18,7 +18,10 @@ const start = (name) => {
                     stylesPath
                 ],
                 {
-                    ignored: /rendered/
+                    ignored: [
+                        /rendered/,
+                        /test-data/
+                    ]
                 }
             ).on('change', (file) => {
                 console.log(`change at ${file}`);
