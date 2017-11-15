@@ -7,9 +7,9 @@ const start = (name) => {
     const componentsPath = path.resolve('components/desktop/new');
     const stylesPath = path.resolve('styles/desktop/css-new');
 
-    build(name).
-        then(() => open(name)).
-        then(() => {
+    build(name)
+        .then(() => open(name))
+        .then(() => {
             console.log('Watching changes!!!');
 
             watchTree(

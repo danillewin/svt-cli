@@ -38,6 +38,7 @@
         "class-methods-use-this": "off",
         "wrap-regex": "off",
         "max-params": ["error", { "max": 4}],
-        "no-magic-numbers": ["error", { "ignore": [0, 1] }]
+        "no-magic-numbers": ["error", { "ignore": [0, 1] }],
+        "dot-location": ["error", "property"]
     }
 }
