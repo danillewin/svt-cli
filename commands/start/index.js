@@ -5,7 +5,7 @@ const open = require('./../open');
 
 const start = (name) => {
     const componentsPath = path.resolve('components/desktop/new');
-    const stylesPath = path.resolve('styles/desktop/css');
+    const stylesPath = path.resolve('styles/desktop/css-new');
 
     build(name)
         .then(() => open(name))
